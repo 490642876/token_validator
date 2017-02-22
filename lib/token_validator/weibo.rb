@@ -1,7 +1,8 @@
 module TokenValidator
   class Weibo
     def validate uid, token
-      raise "Not implemented!"
+      url = "https://api.weibo.com/oauth2/get_token_info"
+      MultiJson.load(Faraday.post(url, access_token: token).body)['uid'] == uid
     end
   end
 

@@ -1,3 +1,7 @@
+
+require 'multi_json'
+require 'faraday'
+
 require "token_validator/base"
 require "token_validator/qq"
 require "token_validator/wechat"
