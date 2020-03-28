@@ -6,8 +6,8 @@ require 'token_validator/version'
 Gem::Specification.new do |spec|
   spec.name          = "token_validator"
   spec.version       = TokenValidator::VERSION
-  spec.authors       = ["pynix"]
-  spec.email         = ["pynix.wang@gmail.com"]
+  spec.authors       = ["pynix", "lizl"]
+  spec.email         = ["pynix.wang@gmail.com", "lizhenluan6368@gmail.com"]
 
   spec.summary       = %q{ Write a short summary, because Rubygems requires one.}
   spec.description   = %q{ Write a longer description or delete this line.}
@@ -22,13 +22,14 @@ Gem::Specification.new do |spec|
     raise "RubyGems 2.0 or newer is required to protect against public gem pushes."
   end
 
-  spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
+  spec.files         = Dir['./**/*'].reject { |file| file =~ /\.\/(bin|log|pkg|script|spec|test|vendor|features)/ }
   spec.bindir        = "exe"
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
   spec.add_dependency 'multi_json', '~> 1.0'
-  spec.add_dependency 'faraday'
+  spec.add_dependency 'faraday', '~> 1.0'
+  spec.add_dependency 'jwt', '~> 2.2'
 
 
   spec.add_development_dependency "bundler", "~> 1.12"

@@ -6,6 +6,10 @@ require "token_validator/base"
 require "token_validator/qq"
 require "token_validator/wechat"
 require "token_validator/weibo"
+require "token_validator/facebook"
+require "token_validator/google"
+require "token_validator/apple"
+require "token_validator/line"
 
 require "token_validator/version"
 
